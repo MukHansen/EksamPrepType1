@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 
 /**
  *
- * @author vince
+ * @author Mkhansen
  */
 @Entity
 @NamedQuery(name = "Address.deleteAllRows", query = "DELETE from Address")

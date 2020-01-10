@@ -18,7 +18,7 @@ import javax.persistence.TypedQuery;
 
 /**
  *
- * @author vince
+ * @author Mkhansen
  */
 public class PersonFacade {
 
@@ -233,7 +233,7 @@ public class PersonFacade {
 
     public HobbyDTO editHobby(HobbyDTO h) {
         EntityManager em = emf.createEntityManager();
-        
+
         Hobby hobby = new Hobby(h.getName(), h.getDescription());
         try {
             em.getTransaction().begin();

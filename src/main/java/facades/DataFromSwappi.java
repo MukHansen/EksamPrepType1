@@ -26,7 +26,7 @@ import net.minidev.json.JSONObject;
 
 /**
  *
- * @author vince
+ * @author Mkhansen
  */
 public class DataFromSwappi {
 

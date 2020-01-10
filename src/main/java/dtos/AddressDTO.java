@@ -9,7 +9,7 @@ import entities.Address;
 
 /**
  *
- * @author vince
+ * @author Mkhansen
  */
 public class AddressDTO {
     private String street;

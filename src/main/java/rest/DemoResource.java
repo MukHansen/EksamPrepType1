@@ -33,7 +33,7 @@ import javax.ws.rs.core.SecurityContext;
 import utils.EMF_Creator;
 
 /**
- * @author vincent
+ * @author Mkhansen
  */
 @Path("info")
 public class DemoResource {

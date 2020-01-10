@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author vince
+ * @author Mkhansen
  */
 public class PersonDTO {
 

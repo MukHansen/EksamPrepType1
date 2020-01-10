@@ -33,14 +33,14 @@ import utils.EMF_Creator;
 
 /**
  *
- * @author vince
+ * @author Mkhansen
  */
 @Path("person")
 public class PersonResource {
 
     private static final EntityManagerFactory EMF = EMF_Creator.createEntityManagerFactory(
             "pu",
-            "jdbc:mysql://localhost:3307/type1",
+            "jdbc:mysql://localhost:3307/EksamPrepType1",
             "dev",
             "ax2",
             EMF_Creator.Strategy.CREATE);

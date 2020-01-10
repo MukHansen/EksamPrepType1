@@ -9,7 +9,7 @@ import entities.Hobby;
 
 /**
  *
- * @author vince
+ * @author Mkhansen
  */
 public class HobbyDTO {
 
