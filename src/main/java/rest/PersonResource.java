@@ -117,7 +117,7 @@ public class PersonResource {
     @Path("createperson")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public PersonDTO getCreatePerson(PersonDTO pDTO) {
+    public PersonDTO createPerson(PersonDTO pDTO) {
         return FACADE.createPerson(pDTO);
     }
 
@@ -125,7 +125,7 @@ public class PersonResource {
     @Path("/deleteperson/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public PersonDTO getDeletePerson(@PathParam("id") int id) {
+    public PersonDTO deletePerson(@PathParam("id") int id) {
         return FACADE.deletePerson(id);
     }
 
@@ -141,7 +141,7 @@ public class PersonResource {
     @Path("createhobby")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public HobbyDTO getCreateHobby(HobbyDTO hDTO) {
+    public HobbyDTO createHobby(HobbyDTO hDTO) {
         return FACADE.createHobby(hDTO);
     }
 
@@ -149,7 +149,7 @@ public class PersonResource {
     @Path("/deletehobby/{name}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public HobbyDTO getDeleteHobby(@PathParam("name") String name) {
+    public HobbyDTO deleteHobby(@PathParam("name") String name) {
         return FACADE.removeHobby(name);
     }
 
@@ -159,5 +159,12 @@ public class PersonResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public HobbyDTO editHobby(HobbyDTO hDTO) {
         return FACADE.editHobby(hDTO);
+    }
+
+    @GET
+    @Path("fill")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getFilling() {
+        return FACADE.fillUp();
     }
 }

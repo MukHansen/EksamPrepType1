@@ -246,4 +246,40 @@ public class PersonFacade {
         return new HobbyDTO(hobby);
     }
 
+    public String fillUp() {
+        EntityManager em = emf.createEntityManager();
+        Person p1, p2;
+        Hobby hobby1, hobby2, hobby3;
+        Address address1, address2;
+
+        hobby1 = new Hobby("Cykling", "Cykling på hold");
+        hobby2 = new Hobby("Fodbold", "Spark til bold");
+        hobby3 = new Hobby("Håndbold", "Kast med bold");
+
+//        List<HobbyDTO> hobbyList1 = new ArrayList();
+//        hobbyList1.add(hobby1);
+//        hobbyList1.add(hobby2);
+//        List<HobbyDTO> hobbyList2 = new ArrayList();
+//        hobbyList2.add(hobby2);
+//        hobbyList2.add(hobby3);
+        address1 = new Address("BalladeStræde", "Balladerup", "2750");
+        address2 = new Address("Herlevhovedgade", "Herlev", "1234");
+        p1 = new Person("Gurli", "Mogensen", "44556677", "email@email.com");
+        p2 = new Person("Gunnar", "Hjorth", "11223344", "mail@mail.com");
+        p1.setHobby(hobby1);
+        p1.setHobby(hobby2);
+        p1.setAddress(address1);
+        p2.setHobby(hobby3);
+        p2.setAddress(address2);
+        try {
+
+            em.getTransaction().begin();
+            em.persist(p1);
+            em.persist(p2);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return "{\"status\":\"filled\"}";
+    }
 }
