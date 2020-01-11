@@ -60,25 +60,6 @@ public class PersonResource {
     }
 
     @GET
-    @Path("setup")
-    @Produces({MediaType.APPLICATION_JSON})
-    public String setup() {
-
-        Person person = new Person("Lars", "Larsen", "80808080", "lars@larsen.dk");
-        Address address = new Address("street 10", "City 10", "2400");
-        Hobby hobby = new Hobby("Fodbold", "boldsport");
-        person.setHobby(hobby);
-
-        person.setAddress(address);
-
-        PersonDTO personDTO = new PersonDTO(person);
-
-        System.out.println(personDTO);
-        FACADE.createPerson(personDTO);
-        return "{\"msg\":\"Setup Complete\"}";
-    }
-
-    @GET
     @Path("id/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public PersonDTO getPersonByID(@PathParam("id") int id) {
