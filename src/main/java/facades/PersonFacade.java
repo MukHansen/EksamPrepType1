@@ -284,10 +284,10 @@ public class PersonFacade {
         return "{\"status\":\"filled\"}";
     }
     
-        public static void main(String[] args) {
-        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory(EMF_Creator.DbSelector.DEV, EMF_Creator.Strategy.CREATE);
-        PersonFacade pf = PersonFacade.getPersonFacade(emf);
-            System.out.println(pf.getPersonByEmail("email@email.com"));
-            System.out.println(pf.getPersonByPhone("11223344"));
-    }
+//        public static void main(String[] args) {
+//        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory(EMF_Creator.DbSelector.DEV, EMF_Creator.Strategy.CREATE);
+//        PersonFacade pf = PersonFacade.getPersonFacade(emf);
+//            System.out.println(pf.getPersonByEmail("email@email.com"));
+//            System.out.println(pf.getPersonByPhone("11223344"));
+//    }
 }
