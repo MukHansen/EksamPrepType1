@@ -249,34 +249,97 @@ public class PersonFacade {
 
     public String fillUp() {
         EntityManager em = emf.createEntityManager();
-        Person p1, p2;
-        Hobby hobby1, hobby2, hobby3;
-        Address address1, address2;
+        Person p1, p2, p3, p4, p5, p6, p7, p8, p9;
+        Hobby hobby1, hobby2, hobby3, hobby4, hobby5, hobby6, hobby7, hobby8, hobby9; 
+        Address address1, address2, address3, address4, address5, address6, address7, address8, address9;
 
         hobby1 = new Hobby("Cykling", "Cykling på hold");
         hobby2 = new Hobby("Fodbold", "Spark til bold");
         hobby3 = new Hobby("Håndbold", "Kast med bold");
+        hobby4 = new Hobby("Ski", "Noget med sne");
+        hobby5 = new Hobby("Snowboard", "Stå på et bræt");
+        hobby6 = new Hobby("Mountainbike", "Cykling i skoven");
+        hobby7 = new Hobby("Rollespil", "Noget med papsværd");
+        hobby8 = new Hobby("Gocart", "4 hjul og 1 motor");
 
-//        List<HobbyDTO> hobbyList1 = new ArrayList();
-//        hobbyList1.add(hobby1);
-//        hobbyList1.add(hobby2);
-//        List<HobbyDTO> hobbyList2 = new ArrayList();
-//        hobbyList2.add(hobby2);
-//        hobbyList2.add(hobby3);
         address1 = new Address("BalladeStræde", "Balladerup", "2750");
         address2 = new Address("Herlevhovedgade", "Herlev", "1234");
+        address3 = new Address("BageStræde", "Albertslun", "2647");
+        address4 = new Address("Tivoligade", "København", "4574");
+        address5 = new Address("Århusvej", "Århus", "8356");
+        address6 = new Address("Herninggade", "Herning", "9764");
+        address7 = new Address("Roskildevej", "Roskilde", "9674");
+        address8 = new Address("Hvidovrevej", "Hvidovre", "4584");
+        address9 = new Address("Skovlundevej", "Skovlunde", "3585");
+        
         p1 = new Person("Gurli", "Mogensen", "44556677", "email@email.com");
-        p2 = new Person("Gunnar", "Hjorth", "11223344", "mail@mail.com");
+        p2 = new Person("Gunnar", "Hjorth", "11223344", "mail@email.com");
+        p3 = new Person("Peter", "Petersen", "22337755", "1234@email.com");
+        p4 = new Person("Pernille", "Pernillesen", "12345678", "todo@email.com");
+        p5 = new Person("Karin", "Karinsen", "88774422", "what@eemail.com");
+        p6 = new Person("Morten", "Mortensen", "44227755", "ever@email.com");
+        p7 = new Person("John", "Johnsen", "99664422", "john@eemail.com");
+        p8 = new Person("Jonna", "jonse", "11447788", "yoyo@email.com");
+        p9 = new Person("Bjørn", "Jernside", "66449922", "anotherEmail@eemail.com");
+        
         p1.setHobby(hobby1);
-        p1.setHobby(hobby2);
+        p1.setHobby(hobby3);
+        p1.setHobby(hobby5);
+        
+        p2.setHobby(hobby2);
+        p2.setHobby(hobby4);
+        p2.setHobby(hobby6);
+        
+        p3.setHobby(hobby3);
+        p3.setHobby(hobby5);
+        p3.setHobby(hobby7);
+        
+        p4.setHobby(hobby4);
+        p4.setHobby(hobby6);
+        p4.setHobby(hobby8);
+        
+        p5.setHobby(hobby1);
+        p5.setHobby(hobby3);
+        p5.setHobby(hobby5);
+        
+        p6.setHobby(hobby2);
+        p6.setHobby(hobby4);
+        p6.setHobby(hobby6);
+        
+        p7.setHobby(hobby3);
+        p7.setHobby(hobby5);
+        p7.setHobby(hobby7);
+        
+        p8.setHobby(hobby4);
+        p8.setHobby(hobby6);
+        p8.setHobby(hobby8);
+
+        p9.setHobby(hobby4);
+        p9.setHobby(hobby6);
+        p9.setHobby(hobby8);
+       
         p1.setAddress(address1);
-        p2.setHobby(hobby3);
         p2.setAddress(address2);
+        p3.setAddress(address3);
+        p4.setAddress(address4);
+        p5.setAddress(address5);
+        p6.setAddress(address6);
+        p7.setAddress(address7);
+        p8.setAddress(address8);
+        p9.setAddress(address9);
+        
         try {
 
             em.getTransaction().begin();
             em.persist(p1);
             em.persist(p2);
+            em.persist(p3);
+            em.persist(p4);
+            em.persist(p5);
+            em.persist(p6);
+            em.persist(p7);
+            em.persist(p8);
+            em.persist(p9);
             em.getTransaction().commit();
         } finally {
             em.close();
@@ -287,7 +350,8 @@ public class PersonFacade {
 //        public static void main(String[] args) {
 //        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory(EMF_Creator.DbSelector.DEV, EMF_Creator.Strategy.CREATE);
 //        PersonFacade pf = PersonFacade.getPersonFacade(emf);
-//            System.out.println(pf.getPersonByEmail("email@email.com"));
-//            System.out.println(pf.getPersonByPhone("11223344"));
+//        pf.fillUp();
+////            System.out.println(pf.getPersonByEmail("email@email.com"));
+////            System.out.println(pf.getPersonByPhone("11223344"));
 //    }
 }
