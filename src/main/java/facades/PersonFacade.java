@@ -86,7 +86,7 @@ public class PersonFacade {
         PersonDTO pDTO;
         try {
             TypedQuery<Person> query = em.createQuery(
-                    "SELECT p FROM Person p JOIN p.address a WHERE p.email = :email", Person.class);
+                    "SELECT p FROM Person p WHERE p.email = :email", Person.class);
             Person person = query.setParameter("email", email).getSingleResult();
             pDTO = new PersonDTO(person);
 
@@ -101,7 +101,7 @@ public class PersonFacade {
         PersonDTO pDTO;
         try {
             TypedQuery<Person> query = em.createQuery(
-                    "SELECT p FROM Person p JOIN p.address a WHERE p.phone = :phoneNumber", Person.class);
+                    "SELECT p FROM Person p WHERE p.phone = :phoneNumber", Person.class);
             Person person = query.setParameter("phoneNumber", phonenumber).getSingleResult();
             pDTO = new PersonDTO(person);
 
@@ -284,10 +284,10 @@ public class PersonFacade {
         return "{\"status\":\"filled\"}";
     }
     
-//        public static void main(String[] args) {
-//        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory(EMF_Creator.DbSelector.DEV, EMF_Creator.Strategy.CREATE);
-//        PersonFacade pf = PersonFacade.getPersonFacade(emf);
-//            System.out.println(pf.getPersonByEmail("email@email.com"));
-//            System.out.println(pf.getPersonByPhone("11223344"));
-//    }
+        public static void main(String[] args) {
+        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory(EMF_Creator.DbSelector.DEV, EMF_Creator.Strategy.CREATE);
+        PersonFacade pf = PersonFacade.getPersonFacade(emf);
+            System.out.println(pf.getPersonByEmail("email@email.com"));
+            System.out.println(pf.getPersonByPhone("11223344"));
+    }
 }
