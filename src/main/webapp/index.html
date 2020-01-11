@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>EksamPrepType1</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
         <h1>Welcome to EksamPrepType1 !!!</h1>
+        <h3>api/person/</h3>
+        @GET
+        @Path("id/{id}")
+        getPersonByID
+        <br>
+        @GET
+        @Path("phone/{phoneNumber}")
+        getPersonByPhone
+        <br>
+        @GET
+        @Path("email/{email}")
+        getPersonByEmail
+        <br>
+        @GET
+        @Path("hobby/{name}")
+        getAllPersonByHobby
+        <br>
+        @GET
+        @Path("allhobbies")
+        getAllHobbies
+        <br>
+        @POST
+        @Path("createperson")
+        createPerson
+        <br>
+        @DELETE
+        @Path("/deleteperson/{id}")
+        deletePerson
+        <br>
+        @PUT
+        @Path("/editperson/{id}")
+        editPerson
+        <br>
+        @POST
+        @Path("createhobby")
+        createHobby
+        <br>
+        @DELETE
+        @Path("/deletehobby/{name}")
+        deleteHobby
+        <br>
+        @PUT
+        @Path("/edithobby")
+        editHobby
+        <br>
+        @GET
+        @Path("fill")
+        getFilling()
     </body>
 </html>
