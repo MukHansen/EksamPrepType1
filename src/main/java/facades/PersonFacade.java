@@ -184,7 +184,7 @@ public class PersonFacade {
         EntityManager em = emf.createEntityManager();
         Person person = em.find(Person.class, id);
         person.setFirstName(pDTO.getfName());
-        person.setLastName(pDTO.getfName());
+        person.setLastName(pDTO.getlName());
         person.setPhone(pDTO.getPhone());
         person.setEmail(pDTO.getEmail());
 
